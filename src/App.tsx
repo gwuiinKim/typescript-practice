@@ -1,16 +1,13 @@
 import React, { FC, useState } from "react";
-
-interface IState {
-  initialValue: number;
-}
+import styled from "styled-components";
+import Number from "./Number";
 
 const App: FC = () => {
   const [clicks, setClicks] = useState(0);
   const [value, setValue] = useState<Array<number>>([]);
-  console.log(value);
   return (
     <div className="App">
-      <p>Clicks: {clicks}</p>
+      <Number count={clicks} />
       <button onClick={() => setClicks(clicks + 1)}>+</button>
       <button onClick={() => setClicks(clicks - 1)}>-</button>
     </div>
